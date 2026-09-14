@@ -1,4 +1,6 @@
-﻿using ProductApi.Data;
+﻿using Microsoft.AspNetCore.Authentication.BearerToken;
+using Microsoft.AspNetCore.Http.HttpResults;
+using ProductApi.Data;
 using System.Diagnostics.CodeAnalysis;
 using WebApplication1.DTOs;
 using WebApplication1.Model;
@@ -43,12 +45,12 @@ namespace WebApplication1.Services.Implementations
         }
 
         //bai 4
-        public Product Search(int inputId)
+        public Product Search(int id)
         {
-            Product? product = SeedData.Products.FirstOrDefault(p => p.Id == inputId);
-            if(product is null)
+            Product? product = SeedData.Products.FirstOrDefault(p => p.Id == id);
+            if (product is null)
             {
-                return null;
+                return NotFound(new );
             }
             else
             {

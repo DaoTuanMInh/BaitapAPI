@@ -13,7 +13,7 @@ namespace WebApplication1.Services.Interfaces
         //bai 3
         List<Product> Pagination(int pageNumber, int pageSize);
         //bai 4
-        Product Search(int inputID);
+        Product Search(int id);
         //bai5
         double TotalPrice();
         //bai 6

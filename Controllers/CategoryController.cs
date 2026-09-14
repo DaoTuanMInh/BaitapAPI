@@ -5,7 +5,7 @@ using WebApplication1.Services.Interfaces;
 
 namespace WebApplication1.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/category")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -16,12 +16,13 @@ namespace WebApplication1.Controllers
             _categoryService = categoryService;
         }
         //bai8
-        [HttpGet("ategory - report")]
+        [HttpGet("category-report")]
         public List<Report> ListReport()
         {
             var ans8 = _categoryService.ListReport();
             return ans8;
         }
+        //bai15
         [HttpGet("revenue")]
         public List<CategoryRevenueDto> CategoryRevenue()
         {
